@@ -8,7 +8,7 @@ $.ajax({
     console.log(response);
 });
 
-var historicalCases = "https://covid-api.mmediagroup.fr/v1/history?country=UnitedStates";
+var historicalCases = "https://covid-api.mmediagroup.fr/v1/history?country=UnitedStates&status=Confirmed";
 
 $.ajax({
     url: historicalCases,
