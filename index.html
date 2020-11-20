@@ -1,9 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          Covid Tracker
+        </div>
+    </nav>
+
+    <section class="section">
+
+        <div class="container">
+            <div class="columns">
+                <div class="column is-3">
+                    <aside class="seachBox">
+                        <label for="searchInput"><strong>Search for a country:</strong></label>
+                        <div class="field has-addons">
+                                <input class="input" type="text" placeholder="country">
+                                <button class="searchBtn button is-info">Search</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<script src="script.js"></script>
+</body>
+
 </html>
