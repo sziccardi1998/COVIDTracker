@@ -1,12 +1,6 @@
-// test covid apis with basic ajax calls
-var currentActive = "https://api.covid19api.com/live/country/united-states";
-
-$.ajax({
-    url: currentActive,
-    method: "GET"
-}).then(function(response){
-    console.log(response);
-}); 
+// create variables to hold responses from ajax calls
+var currentCountry = "";
+var countryISO = "";
 
 // commented out section was to get historical case data but is being blocked by CORS
 /* var historicalCases = "https://covid-api.mmediagroup.fr/v1/history?country=US&status=Confirmed";
@@ -18,7 +12,7 @@ $.ajax({
     console.log(response);
 }); */ 
 
-var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-11-03/2020-11-11";
+var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-01-01/2020-11-11";
 
 $.ajax({
     url: govAction,
@@ -54,7 +48,44 @@ function reverseGeoCode(lat, lon){
         console.log(response);
         var userCountry = response.address.country;
         console.log(userCountry);
+        countryMatch(userCountry);
     })
 }
 
 getLocation();
+
+// create function that looks for country match
+function countryMatch(searchTerm) {
+    var allCountries = "https://api.covid19api.com/countries";
+
+    $.ajax({
+        url: allCountries,
+        method: "GET"
+    }).then(function(response){
+        for(var i = 0; i<response.length; i++){
+            if(response[i].Country === searchTerm){
+                currentCountry = response[i].Slug;
+                console.log(currentCountry);
+                countryISO = response[i].ISO2;
+                i = response.length;
+            }
+        }
+        if(currentCountry === ""){
+            //write message that country does not match an entry in the data
+        }
+        activeSearch(currentCountry);
+    })
+}
+
+// function that builds search for 
+function activeSearch(searchTerm){
+    if (searchTerm !== ""){
+        var currentActive = "https://api.covid19api.com/live/country/" + searchTerm;
+        $.ajax({
+            url: currentActive,
+            method: "GET"
+        }).then(function(response){
+            console.log(response);
+        }); 
+    }
+}
