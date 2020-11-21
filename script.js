@@ -2,16 +2,6 @@
 var currentCountry = "";
 var countryISO = "";
 
-// commented out section was to get historical case data but is being blocked by CORS
-/* var historicalCases = "https://covid-api.mmediagroup.fr/v1/history?country=US&status=Confirmed";
-
-$.ajax({
-    url: historicalCases,
-    method: "GET"
-}).then(function(response){
-    console.log(response);
-}); */ 
-
 var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-01-01/2020-11-11";
 
 $.ajax({
