@@ -1,5 +1,33 @@
-body {
-  background-color: red;
-  font-size: 40px;
-  color: black;
+.has-text-centered {
+  text-align: center;
+  font-size: 3em;
+  padding: 1%;
+  margin: 0%;
+  margin-left: 40%;
+}
+.navbar-brand,
+.navbar-tabs {
+  align-items: center;
+  display: flex;
+  min-height: 3.25rem;
+  margin-left: center;
+  font-size: 256%;
+  margin: left;
+  margin-left: 43%;
+  font-family: cursive;
+}
+
+.column.is-6,
+.column.is-6-tablet {
+  flex: none;
+  background: #f5f5f6;
+  width: 50%;
+}
+.column.is-6,
+.column.is-6-tablet {
+  flex: none;
+  background: #f5f5f6;
+  width: 50%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
