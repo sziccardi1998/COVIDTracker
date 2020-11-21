@@ -13,9 +13,7 @@
 <body>
 
     <nav class="navbar is-info" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            Covid Tracker
-        </div>
+        <div class="navbar-brand">Covid Tracker</div>
     </nav>
 
     <section class="section">
@@ -24,6 +22,7 @@
             <div class="columns">
                 <div class="column is-3">
                     <aside class="seachBox">
+                        <h1 id ="date" class="is-size-4"></h1>
                         <label for="searchInput"><strong>Search for a country:</strong></label>
                         <div class="field has-addons">
                             <input class="input" id="countryInput" type="text" placeholder="country">
@@ -47,17 +46,15 @@
                         <div class="columns">
 
                             <div class="column">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-                                    alt="flag" id="flag">
-                                <h4><strong>Covid Statistics:</strong></h4>
-                                <h5 id="deaths">Number of Covid-19 deaths:</h5>
-                                <h5 id="deathRate">Covid-19 death rate:</h5>
-                                <h5 id="recovRate">Recovery rate:</h5>
-                                <h5 id="infRate">Infection rate:</h5>
-                                <p class="govtResp"> <strong>Government response:</strong> <br> Lorem ipsum dolor sit
-                                    amet, consectetur adipisicing elit. Nobis,
-                                    ipsa, magnam quaerat eum distinctio voluptatem dolor deserunt voluptas nemo quis
-                                    rerum, omnis eveniet unde laborum. Eaque hic necessitatibus saepe aspernatur.</p>
+                                
+                                <h1 id= "countryName"><strong>Country:</strong></h1>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="flag" id="flag">
+                                <h2><strong>Covid Statistics:</strong></h2>
+                                <h3 id="deaths">Number of Covid-19 deaths:</h3>
+                                <h3 id="deathRate">Covid-19 death rate:</h3>
+                                <h3 id="recovRate">Recovery rate:</h3>
+                                <h3 id="sIndex">Stringency Index:</h3>
+                        
                             </div>
 
                         </div>
@@ -65,8 +62,8 @@
                 </div>
 
                 <div class="column is-4">
-                    <h1 id="dangerLevel">Danger Level:</h1>
-                    <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg">
+                    <h1 id="dangerLevel"><strong>Danger Level:</strong></h1>
+                    <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg" height="400" width="400">
                 </div>
 
             </div>
@@ -74,8 +71,20 @@
 
     </section>
 
+    <footer>
+        <nav class="navbar is-info is-fixed-bottom" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                Covid Tracker 2020©
+            </div>
+        </nav>
+    </footer>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
+    <script src="scriptMoment.js"></script>
+
 </body>
 
 </html>
