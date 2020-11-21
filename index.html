@@ -26,16 +26,20 @@
                     <aside class="seachBox">
                         <label for="searchInput"><strong>Search for a country:</strong></label>
                         <div class="field has-addons">
-                            <input class="input" type="text" placeholder="country">
-                            <button class="searchBtn button is-info">Search</button>
+                            <input class="input" id="countryInput" type="text" placeholder="country">
+                            <button class="button is-info" id ="searchBtn">Search</button>
                         </div>
                     </aside>
-                    <button class="searchBtn button is-primary">country0</button>
-                    <br>
-                    <button class="searchBtn button is-primary">country1</button>
-                    <br>
-                    <button class="searchBtn button is-primary">country2</button>
-                    <br>
+                    <div class="seachBtnList">
+                        <br>
+                        <button class="searchBtn button is-primary">country0</button>
+                        <br>
+                        <button class="searchBtn button is-primary">country1</button>
+                        <br>
+                        <button class="searchBtn button is-primary">country2</button>
+                        <br>
+                        
+                    </div>
                 </div>
 
                 <div class="column is-5">
@@ -43,12 +47,15 @@
                         <div class="columns">
 
                             <div class="column">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="flag">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+                                    alt="flag" id="flag">
+                                <h4><strong>Covid Statistics:</strong></h4>
                                 <h5 id="deaths">Number of Covid-19 deaths:</h5>
                                 <h5 id="deathRate">Covid-19 death rate:</h5>
                                 <h5 id="recovRate">Recovery rate:</h5>
                                 <h5 id="infRate">Infection rate:</h5>
-                                <p class="govtResp"> <strong>Government response:</strong> <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,
+                                <p class="govtResp"> <strong>Government response:</strong> <br> Lorem ipsum dolor sit
+                                    amet, consectetur adipisicing elit. Nobis,
                                     ipsa, magnam quaerat eum distinctio voluptatem dolor deserunt voluptas nemo quis
                                     rerum, omnis eveniet unde laborum. Eaque hic necessitatibus saepe aspernatur.</p>
                             </div>
