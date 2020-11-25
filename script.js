@@ -18,6 +18,8 @@ var infRateEle = $("#infRate");
 var flagEle = $("#flag");
 var countryInputEle = $("#countryInput");
 var searchBtnEle = $("#searchBtn");
+var buttonListEle = $("#buttonList");
+var storageIndex = 0;
 
 // get user location from browser
 function getLocation() {
@@ -83,6 +85,14 @@ searchBtn.on("click", function(event){
     var newSearch = countryInputEle.val();
     console.log(newSearch);
     countryMatch(newSearch);
+    createButton(newSearch);
+})
+
+// search when button is clicked
+$(document).on("click", ".is-primary", function(event){
+    event.stopPropagation();
+    var countrySearch = $(this).attr("id");
+    countryMatch(countrySearch);
 })
 
 // function that builds search for 
@@ -131,3 +141,34 @@ function governmentAction() {
 }
 
 governmentAction();
+
+// create function to handle addition of buttons of past searches
+function createButton(searchTerm){
+    // if search is not an empty string create and append the button
+    console.log(searchTerm);
+    if(searchTerm !== ""){
+        // create button and append it to the button list
+        var newButton = $("<button>");
+        newButton.addClass("searchBtn").addClass("button").addClass("is-primary");
+        newButton.attr("id", searchTerm);
+        newButton.text(searchTerm);
+        buttonListEle.append(newButton);
+        buttonListEle.append("<br>")
+        // send button to local storage
+        localStorage.setItem(storageIndex, searchTerm);
+        storageIndex++;
+    }
+}
+
+// retrieve stored buttons from localStorage
+function retrieveButtons(){
+    if(localStorage !== null){
+    
+        for(var i=0; i<localStorage.length; i++){
+        var storedButton = localStorage.getItem(i);
+        createButton(storedButton);
+        }
+    }
+}
+
+retrieveButtons();
