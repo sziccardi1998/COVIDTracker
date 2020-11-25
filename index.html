@@ -13,7 +13,7 @@
 <body>
 
     <nav class="navbar is-info" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand text-centered">Covid Tracker</div>
+        <div class="navbar-brand has-text-centered">Covid Tracker</div>
     </nav>
 
     <section class="section">
@@ -24,18 +24,20 @@
 
                 <!--Search Element-->
                 <div class="column is-3">
-                    <div class="searchBox box box-color has-background-grey has-text-primary-light">
-                        <aside class="seachBar">
+
+                   
+                    <div class="searchBox box box-color has-background-grey">
+
+                        <aside class="seachBox">
                             <h1 id="date" class="is-size-4"></h1>
                             <label for="searchInput"><strong>Search for a country:</strong></label>
                             <div class="field has-addons">
                                 <input class="input" id="countryInput" type="text" placeholder="country">
-                                <button class="button is-info" id="searchBtn">Search</button>
+                                <button class="button is-danger" id="searchBtn">Search</button>
                             </div>
                         </aside>
 
-                        <!--Contains search history buttons-->
-                        <div class="seachBtnList">
+                        <div class="seachBtnList" id="buttonList">
                             <br>
                             <button class="searchBtn button is-primary">country0</button>
                             <br>
@@ -43,6 +45,7 @@
                             <br>
                             <button class="searchBtn button is-primary">country2</button>
                             <br>
+
                         </div>
                     </div>
                 </div>
@@ -64,10 +67,12 @@
 
                 <!--Danger Level Element-->
                 <div class="column is-4">
-                    <div class="column is-12 box box-color has-background-grey has-text-primary-light">
-                        <h1 id="dangerLevel"><strong>Danger Level:</strong></h1>
+
+                    <div class="column box box-color has-background-grey is-12">
+                        <h1 id="dangerLevel"><strong>Danger Level</strong></h1>
                         <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg" height="400" width="400">
                     </div>
+
                 </div>
 
             </div>
@@ -78,7 +83,9 @@
 
     <footer>
         <nav class="navbar is-info is-fixed-bottom" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand text-centered">Covid Tracker 2020 ©</div>
+            <div class="navbar-brand">
+                Covid Tracker 2020
+            </div>
         </nav>
     </footer>
 
