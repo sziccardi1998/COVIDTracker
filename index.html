@@ -19,54 +19,61 @@
     <section class="section">
 
         <div class="container">
+
             <div class="columns">
+
                 <div class="column is-3">
-                    <aside class="seachBox">
-                        <h1 id ="date" class="is-size-4"></h1>
-                        <label for="searchInput"><strong>Search for a country:</strong></label>
-                        <div class="field has-addons">
-                            <input class="input" id="countryInput" type="text" placeholder="country">
-                            <button class="button is-danger" id ="searchBtn">Search</button>
+
+                   
+                    <div class="searchBox box box-color has-background-grey">
+                        <aside class="seachBar">
+                            <h1 id="date" class="is-size-4"></h1>
+                            <label for="searchInput"><strong>Search for a country:</strong></label>
+                            <div class="field has-addons">
+                                <input class="input" id="countryInput" type="text" placeholder="country">
+                                <button class="button is-info" id="searchBtn">Search</button>
+                            </div>
+                        </aside>
+
+                        <div class="seachBtnList" id="buttonList">
+                            <br>
+                            <button class="searchBtn button is-primary">country0</button>
+                            <br>
+                            <button class="searchBtn button is-primary">country1</button>
+                            <br>
+                            <button class="searchBtn button is-primary">country2</button>
+                            <br>
+
                         </div>
-                    </aside>
-                    <div class="seachBtnList">
-                        <br>
-                        <button class="searchBtn button is-primary">country0</button>
-                        <br>
-                        <button class="searchBtn button is-primary">country1</button>
-                        <br>
-                        <button class="searchBtn button is-primary">country2</button>
-                        <br>
-                        
                     </div>
                 </div>
 
                 <div class="column is-5">
-                    <div class="covidStats box box-color">
-                        <div class="columns">
+                    <div class="covidStats box box-color has-background-grey">
 
-                            <div class="column">
-                                
-                                <h1 id= "countryName"><strong>Country:</strong></h1>
-                                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="flag" id="flag">
-                                <h2><strong>Covid Statistics:</strong></h2>
-                                <h3 id="deaths">Number of Covid-19 deaths:</h3>
-                                <h3 id="deathRate">Covid-19 death rate:</h3>
-                                <h3 id="recovRate">Recovery rate:</h3>
-                                <h3 id="sIndex">Stringency Index:</h3>
-                        
-                            </div>
+                        <h1 id="countryName"><strong>Country:</strong></h1>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+                            alt="flag" id="flag">
+                        <h2><strong>Covid Statistics:</strong></h2>
+                        <h3 id="deaths">Number of Covid-19 deaths:</h3>
+                        <h3 id="deathRate">Covid-19 death rate:</h3>
+                        <h3 id="recovRate">Recovery rate:</h3>
+                        <h3 id="sIndex">Stringency Index:</h3>
 
-                        </div>
                     </div>
                 </div>
 
                 <div class="column is-4">
-                    <h1 id="dangerLevel"><strong>Danger Level</strong></h1>
-                    <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg" height="400" width="400">
+
+                    <div class="column box box-color has-background-grey is-12">
+                        <h1 id="dangerLevel"><strong>Danger Level:</strong></h1>
+                        <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg" height="400"
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
 
     </section>
