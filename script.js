@@ -16,15 +16,8 @@ var deathRateEle = $("#deathRate");
 var recovRateEle = $("#recovRate");
 var infRateEle = $("#infRate");
 var flagEle = $("#flag");
-
-var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-01-01/2020-11-11";
-
-$.ajax({
-    url: govAction,
-    method: "GET"
-}).then(function(response){
-    console.log(response);
-});
+var countryInputEle = $("#countryInput");
+var searchBtnEle = $("#searchBtn");
 
 // get user location from browser
 function getLocation() {
@@ -81,8 +74,16 @@ function countryMatch(searchTerm) {
             //write message that country does not match an entry in the data
         }
         activeSearch(currentCountry);
+
     })
 }
+
+searchBtn.on("click", function(event){
+    event.preventDefault();
+    var newSearch = countryInputEle.val();
+    console.log(newSearch);
+    countryMatch(newSearch);
+})
 
 // function that builds search for 
 function activeSearch(searchTerm){
@@ -118,3 +119,15 @@ function activeSearch(searchTerm){
         }); 
     }
 }
+
+function governmentAction() {
+    var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-04-29/2020-05-06";
+    $.ajax({
+        url: govAction,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+    })
+}
+
+governmentAction();
