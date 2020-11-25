@@ -48,6 +48,7 @@ function reverseGeoCode(lat, lon){
         console.log(response);
         var userCountry = response.address.country;
         console.log(userCountry);
+        createButton(userCountry);
         countryMatch(userCountry);
     })
 }
@@ -57,7 +58,7 @@ getLocation();
 // create function that looks for country match
 function countryMatch(searchTerm) {
     var allCountries = "https://api.covid19api.com/countries";
-
+    var currentCountry = "";
     $.ajax({
         url: allCountries,
         method: "GET"
@@ -74,6 +75,7 @@ function countryMatch(searchTerm) {
         }
         if(currentCountry === ""){
             //write message that country does not match an entry in the data
+            alert("Input does not match an entry in our data. Please use proper spelling and capitalization.");
         }
         activeSearch(currentCountry);
 
@@ -123,9 +125,9 @@ function activeSearch(searchTerm){
             }
             deathsEle.append(" " + deathsTotal);
             var deathRate = (deathsTotal/confirmedCases)*100;
-            deathRateEle.append(" " + deathRate + "%");
+            deathRateEle.append(" " + deathRate.toFixed(1) + "%");
             var recoveryRate = (recoveredTotal/confirmedCases)*100;
-            recovRateEle.append(" " + recoveryRate + "%");
+            recovRateEle.append(" " + recoveryRate.toFixed(1) + "%");
         }); 
     }
 }
