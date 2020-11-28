@@ -128,6 +128,41 @@ function activeSearch(searchTerm){
             deathRateEle.append(" " + deathRate.toFixed(1) + "%");
             var recoveryRate = (recoveredTotal/confirmedCases)*100;
             recovRateEle.append(" " + recoveryRate.toFixed(1) + "%");
+
+
+            // Giphy Danger Level
+            var apiKey = "?api_key=HT7rC7MrQFuW2AoLBTsE8CabD7yuhHXN";
+            var gifDangerLow  = "XbxZ41fWLeRECPsGIJ"; // little girl thumbs up
+            var gifDangerMed  = "lMm1GKkThcWM5dvI28"; // caution tape
+            var gifDangerHigh = "LpkLWXTp0v0qy70xPp"; // Steve Irwin "Danger Danger"
+            var gifID;
+
+            if (deathRate <= 5) {
+                gifID = gifDangerLow;
+            }
+
+            else if (deathRate <= 10 && deathRate > 5) {
+                gifID = gifDangerMed;
+            }
+
+            else if (deathRate > 10) {
+                gifID = gifDangerHigh;
+            }
+
+            var queryURL = "https://api.giphy.com/v1/gifs/"+ gifID + apiKey;
+
+                $.ajax({
+                    url: queryURL, method: "GET"
+                }).then(function (gif) {
+                    //console.log(gif);
+
+                    var gifEl = $("#dangerGif");
+                    var gifSource = gif.data.images.original.url;
+                    //console.log(gifSource);
+                    gifEl.attr("src", "");
+                    gifEl.attr("src", gifSource);
+                    //console.log(gifEl);
+                });
         }); 
     }
 }
