@@ -11,6 +11,8 @@ console.log(yesterday);
 // create variables to hold HTML elements
 var countryInput = $("#countryInput");
 var searchBtn = $("#searchBtn");
+var clearBtn = $("#clearBtn");
+var countryText = $("#countryText");
 var deathsEle = $("#deaths");
 var deathRateEle = $("#deathRate");
 var recovRateEle = $("#recovRate");
@@ -65,6 +67,10 @@ function countryMatch(searchTerm) {
     }).then(function(response){
         for(var i = 0; i<response.length; i++){
             if(response[i].Country === searchTerm){
+
+                countryText.text(" " + response[i].Country);
+                
+                console.log(response[i]);
                 currentCountry = response[i].Slug;
                 console.log(currentCountry);
                 countryISO = response[i].ISO2;
@@ -77,6 +83,7 @@ function countryMatch(searchTerm) {
             //write message that country does not match an entry in the data
             alert("Input does not match an entry in our data. Please use proper spelling and capitalization.");
         }
+        
         activeSearch(currentCountry);
 
     })
@@ -88,6 +95,12 @@ searchBtn.on("click", function(event){
     console.log(newSearch);
     countryMatch(newSearch);
     createButton(newSearch);
+})
+
+// Clears local history and buttons rendered from local storage
+clearBtn.click(function () {
+    localStorage.clear();
+    location.reload();
 })
 
 // search when button is clicked
@@ -123,6 +136,7 @@ function activeSearch(searchTerm){
                     recoveredTotal = recoveredTotal + (response[i].Confirmed - response[i].Active - response[i].Deaths);
                 }
             }
+            
             deathsEle.append(" " + deathsTotal);
             var deathRate = (deathsTotal/confirmedCases)*100;
             deathRateEle.append(" " + deathRate.toFixed(1) + "%");
@@ -186,7 +200,7 @@ function createButton(searchTerm){
     if(searchTerm !== ""){
         // create button and append it to the button list
         var newButton = $("<button>");
-        newButton.addClass("searchBtn").addClass("button").addClass("is-primary");
+        newButton.addClass("searchBtn").addClass("button").addClass("is-primary").addClass("my-2");
         newButton.attr("id", searchTerm);
         newButton.text(searchTerm);
         buttonListEle.append(newButton);
