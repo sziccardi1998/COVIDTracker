@@ -143,23 +143,27 @@ function activeSearch(searchTerm){
             recovRateEle.append(" " + recoveryRate.toFixed(1) + "%");
 
 
-            // Giphy Danger Level
+            // giphy danger level
+            // display a gif that shows how dangerous is it to travel to a country based on its death rate
             var apiKey = "?api_key=HT7rC7MrQFuW2AoLBTsE8CabD7yuhHXN";
             var gifDangerLow  = "XbxZ41fWLeRECPsGIJ"; // little girl thumbs up
-            var gifDangerMed  = "lMm1GKkThcWM5dvI28"; // caution tape
-            var gifDangerHigh = "LpkLWXTp0v0qy70xPp"; // Steve Irwin "Danger Danger"
+            var gifDangerMed  = "LpkLWXTp0v0qy70xPp"; // Steve Irwin "Danger Danger"
+            var gifDangerHigh = "lMm1GKkThcWM5dvI28"; // caution tape
             var gifID;
 
             if (deathRate <= 5) {
                 gifID = gifDangerLow;
+                $("html").removeClass("dangerLevelMax");
             }
 
             else if (deathRate <= 10 && deathRate > 5) {
                 gifID = gifDangerMed;
+                $("html").removeClass("dangerLevelMax");
             }
 
             else if (deathRate > 10) {
                 gifID = gifDangerHigh;
+                $("html").addClass("dangerLevelMax");
             }
 
             var queryURL = "https://api.giphy.com/v1/gifs/"+ gifID + apiKey;
