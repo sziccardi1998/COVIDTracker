@@ -22,14 +22,12 @@ var countryInputEle = $("#countryInput");
 var searchBtnEle = $("#searchBtn");
 var buttonListEle = $("#buttonList");
 var storageIndex = 0;
+var sIndexEle = $("#sIndex");
 
 // get user location from browser
 function getLocation() {
     if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else{
-        // display a message about using a browser with geolocation
     }
 }
 
@@ -57,7 +55,7 @@ function reverseGeoCode(lat, lon){
 
 getLocation();
 
-// create function that looks for country match
+// create function that looks for country match after this chage the flag 
 function countryMatch(searchTerm) {
     var allCountries = "https://api.covid19api.com/countries";
     var currentCountry = "";
@@ -77,6 +75,7 @@ function countryMatch(searchTerm) {
                 i = response.length;
                 var imageLocation = "./flagImages/" + countryISO + ".JPG";
                 flagEle.attr("src", imageLocation);
+                threeLetterCode(countryISO);
             }
         }
         if(currentCountry === ""){
@@ -181,17 +180,18 @@ function activeSearch(searchTerm){
     }
 }
 
-function governmentAction() {
+function governmentAction(countryCode) {
     var govAction = "https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/2020-04-29/2020-05-06";
+    sIndexEle.text("Stringency Index: ")
     $.ajax({
         url: govAction,
         method: "GET"
     }).then(function(response){
-        console.log(response);
+        console.log(response.data["2020-05-06"][countryCode].stringency);
+        var stringency = response.data["2020-05-06"][countryCode].stringency;
+        sIndexEle.append(stringency);
     })
 }
-
-governmentAction();
 
 // create function to handle addition of buttons of past searches
 function createButton(searchTerm){
@@ -223,3 +223,16 @@ function retrieveButtons(){
 }
 
 retrieveButtons();
+
+// test of coutry iso code api
+function threeLetterCode(countryISO){
+$.ajax({
+    url: "https://restcountries.eu/rest/v2/alpha?codes=" + countryISO,
+    method: "GET"
+}).then(function(response){
+    console.log(response[0].alpha3Code);
+    // call govenment action function to pass in response of 3 letter code
+    
+    governmentAction(response[0].alpha3Code);
+})
+}
