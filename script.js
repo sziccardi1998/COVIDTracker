@@ -200,7 +200,7 @@ function createButton(searchTerm){
     if(searchTerm !== ""){
         // create button and append it to the button list
         var newButton = $("<button>");
-        newButton.addClass("searchBtn").addClass("button").addClass("is-primary").addClass("my-2");
+        newButton.addClass("searchBtn").addClass("button").addClass("is-primary").addClass("my-2").addClass("px-1");
         newButton.attr("id", searchTerm);
         newButton.text(searchTerm);
         buttonListEle.append(newButton);
