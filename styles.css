@@ -23,13 +23,22 @@
 
 /* -----------------------------------------------------------*/
 html {
-  background: rgb(255 221 87 / 26%);
+  background: rgb(255 221 87 / 26%); 
 }
+
+html.dangerLevelMax {
+  background: black;
+  background-image:url('bgImage/Sirens.gif');
+  background-position: center;
+  background-size: cover; 
+}
+
 body {
   color: rgb(10 10 10);
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5;
+
 }
 .navbar.is-info {
   background-color: rgb(241 70 70);
