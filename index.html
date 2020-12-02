@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Covid Tracker</title>
+
+    <!--Style sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -12,6 +15,7 @@
 
 <body>
 
+    <!--Nav bar displaying website title-->
     <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">Covid Tracker</div>
     </nav>
@@ -23,6 +27,7 @@
             <div class="columns">
 
                 <!--Search Element-->
+                <!--Will allow the user to search a country and clear search history in local storage-->
                 <div class="column is-3">
 
 
@@ -32,7 +37,7 @@
 
                             <h1 id="date" class="is-size-4"></h1>
                             <br>
-
+                            
                             <label for="searchInput"><strong>Search for a country:</strong></label>
                             <div class="field">
                                 <input class="input mt-2" id="countryInput" type="text" placeholder="Country">
@@ -44,22 +49,16 @@
 
                         <hr>
 
+                        <!--Dynamically generated buttons showing user search history-->
                         <label for="buttonList">Search History:</label>
                         <div class="seachBtnList buttons is-centered" id="buttonList">
-
-                            <!-- <br>
-                            <button class="searchBtn button is-primary">country0</button>
-                            <br>
-                            <button class="searchBtn button is-primary">country1</button>
-                            <br>
-                            <button class="searchBtn button is-primary">country2</button>
-                            <br> -->
 
                         </div>
                     </div>
                 </div>
 
                 <!--Covid Info Element-->
+                <!--Dynamically generated statistics-->
                 <div class="column is-5">
                     <div class="covidStats box box-color has-background-grey has-text-primary-light">
 
@@ -77,6 +76,7 @@
                 </div>
 
                 <!--Danger Level Element-->
+                <!--Dynamically generated image, will show a country's travel danger level with a gif-->
                 <div class="column is-4">
 
                     <div class="column box box-color has-background-grey is-12">
@@ -95,13 +95,14 @@
 
     </section>
 
+    <!--Nav bar displaying website title-->
     <footer>
         <nav class="navbar is-info is-fixed-bottom" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">Covid Tracker</div>
         </nav>
     </footer>
 
-
+    <!--Script links-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
