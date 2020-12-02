@@ -2,11 +2,6 @@
 var currentCountry = "";
 var countryISO = "";
 var todaysDate = new Date();
-todaysDate = todaysDate.toISOString();
-var yesterday = new Date();
-yesterday.setDate(yesterday.getDate()-10);
-yesterday = yesterday.toISOString();
-console.log(yesterday);
 
 // create variables to hold HTML elements
 var countryInput = $("#countryInput");
@@ -79,8 +74,17 @@ function countryMatch(searchTerm) {
             }
         }
         if(currentCountry === ""){
-            //write message that country does not match an entry in the data
-            alert("Input does not match an entry in our data. Please use proper spelling and capitalization.");
+            //create notification that tells user to change input
+            var notificationColumn = $("<div>").addClass("column is-4 is-offset-4");
+            var notificationEle = $("<div>").addClass("notification");
+            var deleteButton = $("<button>").addClass("delete");
+            notificationEle.append(deleteButton);
+            var notificationText = $("<p>");
+            notificationText.text("Your search did not match a country. Please make sure your spelling and capitalization are correct.");
+            notificationEle.append(notificationText);
+            notificationColumn.append(notificationEle);
+            $("body").append(notificationColumn);
+
         }
         
         activeSearch(currentCountry);
@@ -107,6 +111,11 @@ $(document).on("click", ".is-primary", function(event){
     event.stopPropagation();
     var countrySearch = $(this).attr("id");
     countryMatch(countrySearch);
+})
+
+$(document).on("click", ".delete", function(event){
+    event.stopPropagation();
+    $(this).parent().remove()
 })
 
 // function that builds search for 
@@ -240,3 +249,4 @@ $.ajax({
     governmentAction(response[0].alpha3Code);
 })
 }
+
