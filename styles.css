@@ -90,19 +90,8 @@ label {
   margin-left: 5%;
   color: black;
 }
-button.is-info {
-  background-color: rgb(50 152 220);
-  border-color: rgb(0 0 0 / 0%);
-  color: rgb(255 255 255);
-  margin-top: 5%;
-}
-.input,
-.textarea {
-  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
-  max-width: 100%;
-  width: 100%;
-  margin: 5%;
-}
+
+
 /* -----------------------------------------------------------*/
 html {
   background: rgb(255 221 87 / 26%);
@@ -181,10 +170,7 @@ h6 {
   font-weight: 400;
   color: black;
 }
-.buttons.is-centered:not(.has-addons) .button:not(.is-fullwidth) {
-  margin-left: -2.75rem;
-  margin-right: 0.25rem;
-}
+
 p {
   color: red;
 }html {
@@ -279,19 +265,8 @@ label {
   margin-left: 5%;
   color: black;
 }
-button.is-info {
-  background-color: rgb(50 152 220);
-  border-color: rgb(0 0 0 / 0%);
-  color: rgb(255 255 255);
-  margin-top: 5%;
-}
-.input,
-.textarea {
-  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
-  max-width: 100%;
-  width: 100%;
-  margin: 5%;
-}
+
+
 /* -----------------------------------------------------------*/
 html {
   background: rgb(255 221 87 / 26%);
@@ -370,10 +345,7 @@ h6 {
   font-weight: 400;
   color: black;
 }
-.buttons.is-centered:not(.has-addons) .button:not(.is-fullwidth) {
-  margin-left: -2.75rem;
-  margin-right: 0.25rem;
-}
+
 p {
   color: red;
 }
