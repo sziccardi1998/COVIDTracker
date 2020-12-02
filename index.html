@@ -22,36 +22,49 @@
 
             <div class="columns">
 
+                <!--Search Element-->
                 <div class="column is-3">
 
-                    <div class="searchBox box box-color has-background-grey">
-                        <aside class="seachBar">
+
+                    <div class="searchBox box box-color has-background-grey has-text-white">
+
+                        <aside class="searchBox">
+
                             <h1 id="date" class="is-size-4"></h1>
+                            <br>
+
                             <label for="searchInput"><strong>Search for a country:</strong></label>
-                            <div class="field has-addons">
-                                <input class="input" id="countryInput" type="text" placeholder="country">
-                                <button class="button is-info" id="searchBtn">Search</button>
+                            <div class="field">
+                                <input class="input mt-2" id="countryInput" type="text" placeholder="Country">
+                                <button class="button is-danger my-3" id="searchBtn">Search</button>
+                                <button class="button is-danger my-3" id="clearBtn">Clear</button>
                             </div>
+
                         </aside>
 
-                        <div class="seachBtnList">
-                            <br>
+                        <hr>
+
+                        <label for="buttonList">Search History:</label>
+                        <div class="seachBtnList buttons is-centered" id="buttonList">
+
+                            <!-- <br>
                             <button class="searchBtn button is-primary">country0</button>
                             <br>
                             <button class="searchBtn button is-primary">country1</button>
                             <br>
                             <button class="searchBtn button is-primary">country2</button>
-                            <br>
+                            <br> -->
+
                         </div>
                     </div>
                 </div>
 
+                <!--Covid Info Element-->
                 <div class="column is-5">
-                    <div class="covidStats box box-color has-background-grey">
+                    <div class="covidStats box box-color has-background-grey has-text-primary-light">
 
-                        <h1 id="countryName"><strong>Country:</strong></h1>
-                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-                            alt="flag" id="flag">
+                        <h1 id="countryEl"><strong>Country:</strong><span id="countryText"></span></h1>
+                        <img src="./flagImages/us.jpg" alt="flag" id="flag">
                         <h2><strong>Covid Statistics:</strong></h2>
                         <h3 id="deaths">Number of Covid-19 deaths:</h3>
                         <h3 id="deathRate">Covid-19 death rate:</h3>
@@ -61,12 +74,17 @@
                     </div>
                 </div>
 
+                <!--Danger Level Element-->
                 <div class="column is-4">
+
                     <div class="column box box-color has-background-grey is-12">
-                        <h1 id="dangerLevel"><strong>Danger Level:</strong></h1>
-                        <img src="https://i.pinimg.com/564x/73/8e/10/738e10a9c02eb209fe63222b1582ceb0.jpg" height="400"
-                            width="400">
+                        <h1 id="dangerLevel"><strong>Danger Level</strong></h1>
+                        <img src="https://media.giphy.com/media/55itGuoAJiZEEen9gg/giphy.gif" 
+                        height="400" 
+                        width="400" 
+                        id="dangerGif">
                     </div>
+
                 </div>
 
             </div>
@@ -80,6 +98,7 @@
             <div class="navbar-brand">
                
             </div>
+            <div class="navbar-brand">Covid Tracker</div>
         </nav>
     </footer>
 
