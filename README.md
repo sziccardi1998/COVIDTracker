@@ -4,7 +4,13 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
 # Requires:
 * JQuery
 * Moment.js
-* 
+* Bulma CSS Framework
+* APIs: 
+  * Oxford COVID-19 Response Tracker
+  * Giphy
+  * LocationIQ
+  * COVID19 
+  * REST Countries
 
 # List of methods
 * activeSearch(searchTerm)
