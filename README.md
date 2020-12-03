@@ -1,12 +1,18 @@
 # COVIDTracker
 A Covid-19 information dashboard that allows the user to lookup a specific country's covid statistics. The user will see the country's flag along with other important data points like covid deaths, death rate, and recovery rate. Users will also see a gif animation displaying how dangerous it is to travel to that country based on its death rate.
 
-#Requires:
+# Requires:
 * JQuery
 * Moment.js
-* 
+* Bulma CSS Framework
+* APIs: 
+  * Oxford COVID-19 Response Tracker
+  * Giphy
+  * LocationIQ
+  * COVID19 
+  * REST Countries
 
-#List of methods
+# List of methods
 * activeSearch(searchTerm)
   * function that builds search
 
@@ -25,7 +31,7 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
   * retrieve stored buttons from localStorage
 
     
-#List of listeners
+# List of listeners
 
 * searchBtn.on("click", function(event)
   * searches when button is clicked
@@ -40,7 +46,7 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
 
 ![Demo Image]()
 
-[Gitpages Link]()
+[Gitpages Link](https://sziccardi1998.github.io/COVIDTracker/)
 
 ## Authors: 
 Simon Ziccardi, Mohamed Ahmed, and Jordan Stuckman
