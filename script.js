@@ -71,7 +71,8 @@ function countryMatch(searchTerm) {
         // grab the country's ISO2 abbreviation to find the flag
         countryISO = response[i].ISO2;
         i = response.length;
-        var imageLocation = "./flagImages/" + countryISO + ".JPG";
+        formattedISO = countryISO.toLowerCase();
+        var imageLocation = "./flagImages/" + formattedISO + ".jpg";
         // add the flag image to the flag element
         flagEle.attr("src", imageLocation);
         // pass the countries ISO2 code to get the ISO3 code
