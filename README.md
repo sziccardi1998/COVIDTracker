@@ -44,7 +44,7 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
 
 ## Visual:
 
-![Demo Image]()
+![Demo Image](./bgImage/Demo.JPG)
 
 [Gitpages Link](https://sziccardi1998.github.io/COVIDTracker/)
 
