@@ -50,3 +50,6 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
 
 ## Authors: 
 Simon Ziccardi, Mohamed Ahmed, and Jordan Stuckman
+
+## License:
+[MIT](./license/license.txt)
