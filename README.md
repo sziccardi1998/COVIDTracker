@@ -49,4 +49,7 @@ A Covid-19 information dashboard that allows the user to lookup a specific count
 [Gitpages Link](https://sziccardi1998.github.io/COVIDTracker/)
 
 ## Authors: 
-Simon Ziccardi, Mohamed Ahmed, and Jordan Stuckman
+Simon Ziccardi, Mohamed Ahmed, and Jordan Stuckman- jordanks93@gmail.com
+
+## License:
+[MIT](./license/license.txt)
